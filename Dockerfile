@@ -21,7 +21,8 @@ RUN sudo apt update \
  ros-jazzy-lms1xx \
  ros-jazzy-diff-drive-controller \
  ros-jazzy-controller-manager \
- ros-jazzy-joint-state-broadcaster
+ ros-jazzy-joint-state-broadcaster \
+ ros-jazzy-joy
 
 COPY ./jackal-bridge ws/src/jackal-bridge
 COPY ./jackal-teleop ws/src/jackal-teleop

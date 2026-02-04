@@ -51,8 +51,8 @@ private:
 
   void joy_cb(const sensor_msgs::msg::Joy::SharedPtr msg)
   {
-    twist_buf_.twist.linear.x = apply_deadzone(msg->axes[0]) * 2.0;
-    twist_buf_.twist.angular.z = 1.5 * apply_deadzone(msg->axes[1]) * 0.5;
+    twist_buf_.twist.linear.x = apply_deadzone(msg->axes[3]) * 2.0;
+    twist_buf_.twist.angular.z = 1.5 * apply_deadzone(msg->axes[2]) * 0.5;
 
     is_auto_ = msg->buttons[1];
     trigger_ = msg->buttons[0];
