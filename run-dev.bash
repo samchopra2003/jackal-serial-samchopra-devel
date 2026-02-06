@@ -11,6 +11,7 @@ docker run -it --rm \
     -e DISPLAY=$DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -e XAUTHORITY=$XAUTH \
+    -e RMW_IMPLEMENTATION=rmw_fastrtps_cpp \
     --name dcist-jackal-`hostname`-base-service \
     dcist-jackal-`hostname`:service \
     bash
