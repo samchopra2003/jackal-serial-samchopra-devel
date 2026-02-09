@@ -18,3 +18,20 @@ back from the microcontroller but its not necessary to make the robot move corre
  - `serivce`: contains a service file to start the docker container upon boot. 
 
 Everything that can be started as a component starts as one. I'm still working on makeing the velocity controller a component, it seems it does not support this out of the box.
+
+# Jackal rules
+
+This will enable joystick input without connecting to a monitor.
+
+On host (not container)
+
+Create rule:
+
+`sudo nano /etc/udev/rules.d/99-joystick.rules`
+
+Add:
+
+```
+KERNEL=="js[0-9]*", MODE="0660", GROUP="input", TAG-="uaccess"
+KERNEL=="event*", SUBSYSTEM=="input", MODE="0660", GROUP="input", TAG-="uaccess"
+```
