@@ -39,11 +39,7 @@ def generate_launch_description():
                                  name='jackal_teleop_node')
     joy_node = Node(package='joy',
                     executable='joy_node',
-                    output='screen',
-    remappings=[
-            ('/joy', '/joy_test')   # raw joystick here
-        ]
-    )
+                    output='screen')
     # control
     robot_state_node = ComposableNode(package='robot_state_publisher',
                                       plugin='robot_state_publisher::RobotStatePublisher',
