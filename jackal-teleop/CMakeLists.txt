@@ -41,21 +41,6 @@ ament_target_dependencies(jackal_teleop
 )
 rclcpp_components_register_nodes(jackal_teleop "jackal_teleop::JackalTeleop")
 
-# Joy filter node (normal executable)
-
-add_executable(joy_filter src/joy_filter.cpp)
-
-ament_target_dependencies(
-  joy_filter
-  rclcpp
-  sensor_msgs
-)
-
-install(
-  TARGETS joy_filter
-  DESTINATION lib/${PROJECT_NAME}
-)
-
 
 # Install 
 
