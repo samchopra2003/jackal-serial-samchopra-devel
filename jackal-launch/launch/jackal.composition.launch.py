@@ -44,12 +44,6 @@ def generate_launch_description():
             ('/joy', '/joy_test')   # raw joystick here
         ]
     )
-    joy_filter = Node(
-        package='jackal_teleop',
-        executable='joy_filter',   # the node you write
-        name='joy_filter',
-        output='screen',
-    )
     # control
     robot_state_node = ComposableNode(package='robot_state_publisher',
                                       plugin='robot_state_publisher::RobotStatePublisher',
@@ -106,7 +100,6 @@ def generate_launch_description():
     return LaunchDescription([robot_description_command_arg, 
                               container, 
                               joy_node,
-         		      joy_filter,
                               control_node,
                               joint_spawner_node, 
                               vel_spawner_node])
