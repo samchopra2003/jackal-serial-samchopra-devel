@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#xhost +
+xhost +
 docker run -it --rm \
     --network=host \
     --ipc=host \
@@ -16,4 +16,4 @@ docker run -it --rm \
     --name dcist-jackal-`hostname`-base-service \
     dcist-jackal-`hostname`:service \
     bash
-#xhost -
+xhost -
